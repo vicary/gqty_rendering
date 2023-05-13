@@ -51,7 +51,7 @@ const cache = new Cache(
    * stale-while-revalidate.
    */
   {
-    maxAge: 0,
+    maxAge: Infinity,
     staleWhileRevalidate: 5 * 60 * 1000,
     normalization: true,
   }

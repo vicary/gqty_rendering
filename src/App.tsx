@@ -8,7 +8,7 @@ import { Maybe, Passenger, UpdatePassengerInput, useMutation, useQuery } from '.
 
 function App() {
 
-  const { cars } = useQuery()
+  const { cars, $refetch } = useQuery()
   const [index, setIndex] = useState(0);
   const onActive = (nextIndex: number) => setIndex(nextIndex);
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,6 +26,7 @@ function App() {
     onComplete: () => {
       setModalOpen(false)
       setActivePassenger(null)
+      $refetch(true)
     }
   })
 
