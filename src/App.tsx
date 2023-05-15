@@ -17,6 +17,11 @@ function App() {
         </>
       )}
 
+      <p>
+        Click on a character may triggers infinite fetch loop, usually happens
+        within 3 tries.
+      </p>
+
       <Characters
         onClick={(p) => {
           setActiveCharacter(p);

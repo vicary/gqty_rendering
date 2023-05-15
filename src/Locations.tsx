@@ -1,18 +1,14 @@
-import { Location, Maybe, useQuery } from "./gqty";
+import { Location, useQuery } from "./gqty";
 
-interface LocationsProps {
-  onClick?: (p: Maybe<Location>) => void;
-}
-
-const Locations: React.FC<LocationsProps> = ({ onClick }) => {
+const Locations: React.FC<{
+  onClick?: (p: Location) => void;
+}> = ({ onClick }) => {
   const { locations } = useQuery();
 
   console.log("cars render");
 
   return (
     <>
-      <p>here you can see, gqty fetches the whole query on hover</p>
-
       {locations()?.results?.map((location) => (
         <a
           href={onClick ? "javascript:void(0)" : undefined}
@@ -20,7 +16,7 @@ const Locations: React.FC<LocationsProps> = ({ onClick }) => {
           onClick={(e) => {
             e.preventDefault();
 
-            onClick?.(location);
+            if (location) onClick?.(location);
           }}
           style={{
             display: "block",
