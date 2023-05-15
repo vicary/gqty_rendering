@@ -53,7 +53,7 @@ const cache = new Cache(
    * allowing soft refetches in background.
    */
   {
-    maxAge: Infinity,
+    maxAge: 0,
     staleWhileRevalidate: 5 * 60 * 1000,
     normalization: true,
   }

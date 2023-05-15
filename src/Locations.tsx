@@ -38,30 +38,6 @@ const Locations: React.FC<LocationsProps> = ({ onClick }) => {
           </div>
         </a>
       ))}
-
-      {/* <DataTable
-        fill
-        onClickRow={({ datum }) => onClick && onClick(datum)}
-        data={q.cars()}
-        columns={[
-          {
-            property: "id",
-            header: "Id",
-            primary: true,
-          },
-          {
-            property: "brand",
-            header: "Brand",
-          },
-          {
-            property: "passengers",
-            header: "Passengers count",
-            render: (c) => {
-              return c?.passengers?.map((p) => p.id).length;
-            },
-          },
-        ]}
-      /> */}
     </>
   );
 };

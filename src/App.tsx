@@ -1,5 +1,3 @@
-import { Grommet, Layer } from "grommet";
-import { hpe } from "grommet-theme-hpe";
 import { useState } from "react";
 import Characters from "./Characters";
 import Locations from "./Locations";
@@ -9,13 +7,14 @@ function App() {
   const [activeCharacter, setActiveCharacter] = useState<Maybe<Character>>();
 
   return (
-    <Grommet full theme={hpe}>
+    <>
       <h1>GQTY rendering</h1>
 
       {activeCharacter && (
-        <Layer position={"top"} onEsc={() => setActiveCharacter(undefined)}>
+        <>
+          <button onClick={() => setActiveCharacter(undefined)}>Close</button>
           <Locations />
-        </Layer>
+        </>
       )}
 
       <Characters
@@ -23,7 +22,7 @@ function App() {
           setActiveCharacter(p);
         }}
       />
-    </Grommet>
+    </>
   );
 }
 
