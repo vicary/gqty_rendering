@@ -12,7 +12,8 @@ const queryFetcher: QueryFetcher = async function (
   { query, variables, operationName },
   fetchOptions
 ) {
-  const response = await fetch("http://185.113.124.200:8088/query", {
+  // Modify "https://rickandmortyapi.com/graphql" if needed
+  const response = await fetch("https://rickandmortyapi.com/graphql", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +39,8 @@ const queryFetcher: QueryFetcher = async function (
     return JSON.parse(text);
   } catch {
     throw new GQtyError(
-      `Malformed JSON response: ${text.length > 50 ? text.slice(0, 50) + "..." : text
+      `Malformed JSON response: ${
+        text.length > 50 ? text.slice(0, 50) + "..." : text
       }`
     );
   }
@@ -47,8 +49,8 @@ const queryFetcher: QueryFetcher = async function (
 const cache = new Cache(
   undefined,
   /**
-   * Default cache options immediate expiry with a 5 minutes window of
-   * stale-while-revalidate.
+   * Default option is immediate cache expiry but keep it for 5 minutes,
+   * allowing soft refetches in background.
    */
   {
     maxAge: Infinity,

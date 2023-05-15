@@ -19,8 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-
-
     "useDefineForClassFields": true,
     "allowJs": false,
     "esModuleInterop": false,
