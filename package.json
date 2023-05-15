@@ -12,8 +12,8 @@
     "generate": "gqty generate"
   },
   "dependencies": {
-    "@gqty/react": "3.0.0-alpha-4c58a180.0",
-    "gqty": "3.0.0-alpha-4c58a180.0",
+    "@gqty/react": "3.0.0-alpha-524ea531.0",
+    "gqty": "3.0.0-alpha-524ea531.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
